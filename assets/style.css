@@ -460,6 +460,76 @@ a.card:hover .card__more .icon {
   letter-spacing: -0.015em;
 }
 
+/* ---------- Apps ---------- */
+
+.block--apps {
+  padding-bottom: 48px;
+}
+
+.apps {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+  padding: 28px 32px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-elev);
+  box-shadow: var(--shadow);
+}
+
+.app__icon {
+  align-self: start;
+  width: 72px;
+  height: 72px;
+  border-radius: 22.5%;
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+.app h3 {
+  margin: 0;
+  font: 500 26px/1.2 var(--serif);
+  letter-spacing: -0.015em;
+}
+
+.app p {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.app .app__tagline {
+  margin: 2px 0 10px;
+  color: var(--muted);
+}
+
+.app__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.app__meta li {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+}
+
 /* ---------- Document ---------- */
 
 .doc {
@@ -861,6 +931,17 @@ a.contact__value:hover {
   }
 }
 
+@media (max-width: 800px) {
+  .app {
+    grid-template-columns: 72px minmax(0, 1fr);
+  }
+
+  .app__cta {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
 @media (max-width: 959px) {
   .doc {
     grid-template-columns: minmax(0, 1fr);
@@ -977,6 +1058,31 @@ a.contact__value:hover {
 
   .card__more {
     padding-top: 14px;
+  }
+
+  .block--apps {
+    padding-bottom: 32px;
+  }
+
+  .app {
+    grid-template-columns: 60px minmax(0, 1fr);
+    align-items: start;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .app__icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .app h3 {
+    font-size: 22px;
+  }
+
+  .app__cta {
+    grid-column: 1 / -1;
+    justify-self: stretch;
   }
 
   .prose section {
